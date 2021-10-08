@@ -1,6 +1,7 @@
 const { DataTypes, Model } = require("sequelize");
 const { sequelize } = require("../database/database");
-const { Ciudad } = require("./Ciudad");
+const { Sala } = require("./Sala");
+
 
 class Sucursal extends Model {}
 
@@ -14,23 +15,24 @@ Sucursal.init(
     nombre: { type: DataTypes.STRING },
     descripcion: { type: DataTypes.TEXT },
     direccion: { type: DataTypes.STRING },
-    urlmapa: { type: DataTypes.INTEGER },
-    estado: { type: DataTypes.BOOLEAN }
+    estado: { type: DataTypes.BOOLEAN },
+    urlimagen: {type : DataTypes.STRING}
   },
   { sequelize, modelName: "sucursal", timestamps: false, tableName:'sucursal' }
 );
 
 
-Ciudad.belongsTo(Sucursal, {
-    foreignKey: 'idciudad',
+
+/*
+Sala.belongsTo(Sucursal, {
+    foreignKey: 'idsucursal',
     sourceKey : 'id'
 });
 
-Sucursal.hasMany(Ciudad, {
-    foreignKey: 'idciudad',
+Sucursal.hasMany(Sala, {
+    foreignKey: 'idsucursal',
     sourceKey : 'id'
-});
-
+});*/
 
 
 module.exports = { Sucursal };

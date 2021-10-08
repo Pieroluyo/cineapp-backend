@@ -19,14 +19,17 @@ Ciudad.init(
   { sequelize, modelName: "ciudad", timestamps: false, tableName:'ciudad' }
 );
 
-Ciudad.belongsTo(Sucursal, {
+
+/*
+
+Sucursal.belongsTo(Ciudad, {
     foreignKey: 'idciudad',
     sourceKey : 'id'
 });
 
-Sucursal.hasMany(Ciudad, {
+Ciudad.hasMany(Sucursal, {
     foreignKey: 'idciudad',
     sourceKey : 'id'
 });
-
+*/
 module.exports = { Ciudad };

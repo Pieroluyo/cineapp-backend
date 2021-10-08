@@ -19,17 +19,16 @@ TipoPelicula.init(
 
 
 
+/*
 Pelicula.belongsTo(TipoPelicula, {
-    foreignKey: 'idtipo',
+    foreignKey: 'idtipopelicula',
     sourceKey : 'id'
 });
 
 TipoPelicula.hasMany(Pelicula, {
-    foreignKey: 'idtipo',
+    foreignKey: 'idtipopelicula',
     sourceKey : 'id'
-});
+});*/
 
 
-
-
-module.exports = { TipoSala: TipoPelicula };
+module.exports = { TipoPelicula };

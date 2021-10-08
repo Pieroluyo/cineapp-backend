@@ -17,19 +17,15 @@ TipoSala.init(
   { sequelize, modelName: "tiposala", timestamps: false, tableName : 'tiposala'}
 );
 
-
-
+/*
 Sala.belongsTo(TipoSala, {
-    foreignKey: 'idtipo',
+    foreignKey: 'idtiposala',
     sourceKey : 'id'
 });
 
-TipoSala.hasMany(Pelicula, {
-    foreignKey: 'idtipo',
+TipoSala.hasMany(Sala, {
+    foreignKey: 'idtiposala',
     sourceKey : 'id'
-});
-
-
-
+});*/
 
 module.exports = { TipoSala };

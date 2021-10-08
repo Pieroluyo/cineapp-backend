@@ -3,7 +3,6 @@ const { sequelize } = require("../database/database");
 
 class Asiento extends Model {}
 
-
 Asiento.init(
   {
     id: {
@@ -12,7 +11,7 @@ Asiento.init(
     },
     idsala: { type: DataTypes.INTEGER },
     nombre: { type: DataTypes.STRING },
-    fila: { type: DataTypes.INTEGER },
+    fila: { type: DataTypes.STRING },
     descripcion: { type: DataTypes.STRING },
     estado: { type: DataTypes.BOOLEAN }
   },

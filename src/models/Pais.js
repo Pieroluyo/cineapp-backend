@@ -18,6 +18,7 @@ Pais.init(
 );
 
 
+/*
 Ciudad.belongsTo(Pais, {
     foreignKey: 'idpais',
     sourceKey : 'id'
@@ -26,7 +27,7 @@ Ciudad.belongsTo(Pais, {
 Pais.hasMany(Ciudad, {
     foreignKey: 'idpais',
     sourceKey : 'id'
-});
+});*/
 
 
 module.exports = { Pais };

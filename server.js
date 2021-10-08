@@ -31,6 +31,10 @@ class Server {
       // ruta de usuario
       this.app.use(this.Path, require("./src/routes/usuario"));
       this.app.use(this.Path, require("./src/routes/tipousuario"));
+      this.app.use(this.Path, require("./src/routes/pelicula"));
+      this.app.use(this.Path, require("./src/routes/sucursal"));
+      this.app.use(this.Path, require("./src/routes/asiento"));
+      this.app.use(this.Path, require("./src/routes/sala"));
 
       // 
       

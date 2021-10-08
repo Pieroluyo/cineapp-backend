@@ -32,12 +32,14 @@ Usuario.belongsTo(TipoUsuario, {
 
 // un tipo muchas tareas
 
+
+/*
 TipoUsuario.hasMany(Usuario, {
     foreignKey: 'idtipo',
     sourceKey : 'id'
 });
 
-
+*/
 
 
 module.exports = {

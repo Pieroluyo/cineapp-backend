@@ -1,6 +1,5 @@
 const { DataTypes, Model } = require("sequelize");
 const { sequelize } = require("../database/database");
-const { Sala } = require("./Sala");
 
 class TipoSala extends Model {}
 
@@ -16,16 +15,5 @@ TipoSala.init(
   },
   { sequelize, modelName: "tiposala", timestamps: false, tableName : 'tiposala'}
 );
-
-/*
-Sala.belongsTo(TipoSala, {
-    foreignKey: 'idtiposala',
-    sourceKey : 'id'
-});
-
-TipoSala.hasMany(Sala, {
-    foreignKey: 'idtiposala',
-    sourceKey : 'id'
-});*/
 
 module.exports = { TipoSala };

@@ -1,5 +1,6 @@
 const { DataTypes, Model } = require("sequelize");
 const { sequelize } = require("../database/database");
+const { Sala } = require("./Sala");
 
 class Asiento extends Model {}
 
@@ -9,7 +10,13 @@ Asiento.init(
       type: DataTypes.INTEGER,
       primaryKey: true,
     },
-    idsala: { type: DataTypes.INTEGER },
+    idsala: { 
+      type: DataTypes.INTEGER,
+      references : {
+        model : Sala,
+        key : 'id'
+      }
+    },
     nombre: { type: DataTypes.STRING },
     fila: { type: DataTypes.STRING },
     descripcion: { type: DataTypes.STRING },
@@ -19,5 +26,16 @@ Asiento.init(
 );
 
 
+/************
+ * @ por sala
+ */
+
+Asiento.belongsTo(Sala,{
+  foreignKey : 'idsala'
+});
+
+Sala.hasMany(Asiento, {
+  foreignKey : 'idsala'
+});
 
 module.exports = { Asiento };

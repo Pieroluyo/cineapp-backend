@@ -1,6 +1,5 @@
 const { DataTypes, Model } = require("sequelize");
 const { sequelize } = require("../database/database");
-const { Sucursal } = require("./Sucursal");
 
 
 class Ciudad extends Model {}

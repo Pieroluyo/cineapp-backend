@@ -1,13 +1,14 @@
 const { Router } = require("express");
-const { getPelicula, getPeliculaPortada } = require("../controllers/pelicula.controller");
+const { getPeliculas, getPeliculaPortada, getTipoPelicula, getPeliculaDetalle } = require("../controllers/pelicula.controller");
 
 
 
 const rutaPelicula = Router();
 
-rutaPelicula.get('/peliculas', getPelicula);
+rutaPelicula.get('/peliculas', getPeliculas);
 rutaPelicula.get('/peliculas/portada', getPeliculaPortada);
-
+rutaPelicula.get('/peliculas/tipo', getTipoPelicula);
+rutaPelicula.get('/peliculas/:nombre_slug', getPeliculaDetalle);
 
 
 module.exports = rutaPelicula;

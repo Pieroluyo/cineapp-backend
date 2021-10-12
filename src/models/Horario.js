@@ -1,7 +1,7 @@
 const { DataTypes, Model } = require("sequelize");
 const { sequelize } = require("../database/database");
 const { Sala } = require("./Sala");
-
+ 
 class Horario extends Model {}
 
 Horario.init(
@@ -18,8 +18,7 @@ Horario.init(
   },
   { sequelize, modelName: "horario", timestamps: false, tableName : 'horario'}
 );
-
-/*
+ /*
 Sala.belongsTo(Horario, {
     foreignKey: 'idsala',
     sourceKey : 'id'

@@ -9,6 +9,7 @@ Usuario.init(
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
+      autoIncrement: true
     },
     idtipo: { type: DataTypes.INTEGER },
     nombre: { type: DataTypes.STRING },

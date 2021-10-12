@@ -1,7 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-require('dotenv').config();
-
+require("dotenv").config();
 
 class Server {
   constructor() {
@@ -18,26 +17,23 @@ class Server {
 
   middlewares() {
     // CORS
-    this.app.use(cors());
+    this.app.use(
+      cors({
+        origin: "http://localhost:3000",
+      })
+    );
+
     // Lectura y parseo del body (para que la informacion que vemnga ahi la va a serialixar a formato Json)
     this.app.use(express.json());
   }
 
-
-
   // configuración de rutas
   routes() {
-
-      // ruta de usuario
-      this.app.use(this.Path, require("./src/routes/usuario"));
-      this.app.use(this.Path, require("./src/routes/tipousuario"));
-      this.app.use(this.Path, require("./src/routes/pelicula"));
-      this.app.use(this.Path, require("./src/routes/sucursal"));
-      this.app.use(this.Path, require("./src/routes/asiento"));
-      this.app.use(this.Path, require("./src/routes/sala"));
-
-      // 
-      
+    // ruta de usuario
+    this.app.use(this.Path, require("./src/routes/usuario"));
+    this.app.use(this.Path, require("./src/routes/pelicula"));
+    this.app.use(this.Path, require("./src/routes/cine"));
+    //
   }
 
   listen() {
@@ -45,9 +41,6 @@ class Server {
       console.log("Servidor corriendo en puerto", this.port);
     });
   }
-
-
 }
-
 
 module.exports = { Server };

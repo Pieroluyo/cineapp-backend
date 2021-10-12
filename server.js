@@ -33,7 +33,7 @@ class Server {
     this.app.use(this.Path, require("./src/routes/usuario"));
     this.app.use(this.Path, require("./src/routes/pelicula"));
     this.app.use(this.Path, require("./src/routes/cine"));
-    //
+    this.app.use(this.Path, require("./src/routes/horarios"));    //
   }
 
   listen() {

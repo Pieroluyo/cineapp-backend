@@ -1,8 +1,6 @@
 const { Router } = require("express");
 const { getPeliculas, getPeliculaPortada, getTipoPelicula, getPeliculaDetalle, getPeliculasSucursal } = require("../controllers/pelicula.controller");
 
-
-
 const rutaPelicula = Router();
 
 rutaPelicula.get('/peliculas', getPeliculas);
